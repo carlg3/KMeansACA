@@ -10,12 +10,12 @@
 
 using namespace std;
 
-int MAX_ITERATION = 10;
+int MAX_ITERATION = 5;
 
 const int LENTAG = 0, STAT = 1, DATAPOINTTAG = 2, DATACLUSTERTAG = 3, DATASUMCLUSTERTAG = 4;
 
-// string path_gcloud = "/home/galan/ACAproject/MPI-K-Means-Clustering-main/";
-string path_gcloud = "/mnt/c/Users/galan/Documents/GitHub/ACAproject/MPI-K-Means-Clustering-main/";
+// string path_gcloud = "/home/galan/ACAproject/";
+string path_gcloud = "/mnt/c/Users/galan/Desktop/KMeansACA/";
 
 string dataset = path_gcloud + "DataSet/DataSet10000x10.txt";
 
@@ -75,6 +75,7 @@ int main(int argc, char* argv[]) {
 		if(argc == 2){
 			// Se ho passato un argomento
 			dataset = path_gcloud + "DataSet/" + argv[1];
+            // cout<<dataset<<endl;
 		}
         readDataset(points_temp_, dataset);
 
@@ -204,7 +205,7 @@ int main(int argc, char* argv[]) {
          * [MASTER] to save the execution time of the program
          * <processi-- commSize> <numero di punti-- points_number> <dimensione punti-- point_dim> <numero di cluster> <tempo di esecuzione>
         */
-        // writeExTime(commSize, points_number, point_dim, K, end_time - start_time);
+        writeExTime(commSize, points_number, point_dim, K, end_time - start_time);
 
         // Cluster::saveCentroids(my_rank, 205);
         // Cluster::saveClusters(my_rank, 206);

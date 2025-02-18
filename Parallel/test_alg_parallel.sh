@@ -17,7 +17,8 @@ fi
 > "$OUTPUT_FILE"
 
 # Itera attraverso i file nella cartella "DataSet"
-for FILE in "$DATASET_DIR"/*; do
+for FILE in "$DATASET_DIR"/*;
+do
   if [ -f "$FILE" ]; then
     # Ottieni solo il nome del file con estensione
     FILENAME=$(basename "$FILE")

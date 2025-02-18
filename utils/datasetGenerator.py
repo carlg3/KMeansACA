@@ -13,7 +13,11 @@ def write_matrix(M, N):
 # write_matrix(40000, 10)
 # write_matrix(50000, 10)
 # write_matrix(100000, 10)
-write_matrix(1000, 2)
+# write_matrix(1000, 2)
+
+inc = 625
+for i in range(inc, inc*17, inc):
+    write_matrix(i, 10)
 
 print("Done!")
 
